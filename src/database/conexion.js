@@ -1,10 +1,13 @@
 import sql from 'mssql'
+import { config } from 'dotenv'
+
+config()
 
 const configuracion = {
-  user: "",
-  password: "",
-  database: "",
-  server: "",
+  user: process.env.USUARIO_BDD,
+  password: process.env.CONTRASENIA_BDD,
+  database: process.env.BASE_DE_DATOS,
+  server: process.env.SERVIDOR_BDD,
   pool: {
     max: 10,
     min: 0,
