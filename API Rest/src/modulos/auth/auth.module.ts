@@ -13,14 +13,14 @@ import { AuthController } from './auth.controller';
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],      
       useFactory: (configService: ConfigService) => ({
-        type: 'mysql' ,
+        type: 'mssql' ,
         host: configService.get<string>('SERVIDOR_BDD'),
         port: parseInt(configService.get<string>('PUERTO_BDD')),
         username: configService.get<string>('USUARIO_BDD'),
         password: configService.get<string>('CONTRASENIA_BDD'),
         database: configService.get<string>('BASE_DE_DATOS'),
         entities: [__dirname + '/modulos/**/*.entity{.ts,.js}'],
-        synchronize: false
+        synchronize: true
       }),
       inject: [ConfigService]
       
