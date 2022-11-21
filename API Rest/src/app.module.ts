@@ -4,12 +4,29 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ClienteModule } from './modulos/cliente/cliente.module';
-import { AuthModule } from './modulos/auth/auth.module';
 
 @Module({
   imports: [
-    ClienteModule,
-    AuthModule
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: process.env.NODE_ENV + '.env',
+    }),
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],      
+      useFactory: (configService: ConfigService) => ({
+        type: 'mysql' ,
+        host: configService.get<string>('SERVIDOR_BDD'),
+        port: parseInt(configService.get<string>('PUERTO_BDD')),
+        username: configService.get<string>('USUARIO_BDD'),
+        password: configService.get<string>('CONTRASENIA_BDD'),
+        database: configService.get<string>('BASE_DE_DATOS'),
+        entities: [__dirname + '/modulos/**/*.entity{.ts,.js}'],
+        synchronize: true
+      }),
+      inject: [ConfigService]
+      
+    }),
+    ClienteModule
   ],
   controllers: [AppController],
   providers: [AppService],

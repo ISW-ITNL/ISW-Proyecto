@@ -2,14 +2,15 @@
 
     <div class="login-box">
      <img class="avatar" src="assets/img/Llinmex-Logo.jpg" alt="Logo de Linmex"> 
-      <form action="auth" method="post">
+  
+      <form (ngSubmit)="login()">
         <!-- USERNAME -->
         <label name="Usuario" for="username"></label>
-        <input type="text" name="usuario" id="1" placeholder="User" autocomplete="off" required>
+        <input type="text" name="usuario" id="1" placeholder="User" autocomplete="off" required [(ngModel)]="email">
 
          <!-- Password -->
         <label name="contrasenia" for="Password"></label>
-        <input type="password" name="contraseña" id="2" placeholder="contraseña" required>
+        <input type="password" name="contraseña" id="2" placeholder="contraseña" required [(ngModel)]="password">
 
         <input type="submit" value="Iniciar Sesion">
         <a (click)="recuperarPassword()">¿Olvidaste tu contraseña?</a>
