@@ -47,8 +47,8 @@ Si quieres ver la documentación visita `localhost:3000/api/documentation`
 
 Primero crea una base de datos con el nombre db_isw luego ejecuta los sigueines querys
 
-> INSERT INTO `db_isw`.`tipo_tarjetas` (`nombre`) VALUES ('AMEX');
-> INSERT INTO `db_isw`.`tipo_tarjetas` (`nombre`) VALUES ('VISA');
-> INSERT INTO `db_isw`.`tipo_tarjetas` (`nombre`) VALUES ('MASTER CARD');
-> INSERT INTO `db_isw`.`clientes` (`nombre`, `apellido`, `email`, `telefono`, `direccion`, `ciudad`, `estado`, `codigo_postal`, `plan`, `promociones`, `portabilidad`, `password`) VALUES ('Alberto', 'Barrientos', 'hola@gmail.com', '78128293', 'ASDask', 'New York', 'Peru', '81923', '0', '0', '0', 'ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f');
+    INSERT INTO `db_isw`.`tipo_tarjetas` (`nombre`) VALUES ('AMEX');
+    INSERT INTO `db_isw`.`tipo_tarjetas` (`nombre`) VALUES ('VISA');
+    INSERT INTO `db_isw`.`tipo_tarjetas` (`nombre`) VALUES ('MASTER CARD');
+    INSERT INTO `db_isw`.`clientes` (`nombre`, `apellido`, `email`, `telefono`, `direccion`, `ciudad`, `estado`, `codigo_postal`, `plan`, `promociones`, `portabilidad`, `password`) VALUES ('Alberto', 'Barrientos', 'hola@gmail.com', '78128293', 'ASDask', 'New York', 'Peru', '81923', '0', '0', '0', 'ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f');
 
