@@ -7,4 +7,7 @@ export class AppService {
   getHello(res) {
     return res.sendFile('index.html');
   }
+  getHola(res){
+    
+  }
 }

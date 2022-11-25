@@ -1,0 +1,60 @@
+body {
+	background:#FFAA4A;
+	font-family: Gill Sans MT;
+	  }
+	
+	
+	.pay-box .avatar{
+		width: 215px;
+		height: 215px;
+		border: 6px darkgray;
+		position: absolute;
+		top:  5px;
+		left: calc(42% - 50px);
+	  }
+	
+	.pay-box{
+	width: 600px;
+	height: 500px;  
+	background: #000;
+	color:#FFF;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+	padding: 300px 50px;
+	}
+	
+	.Formulario-tarjeta{
+		background: #000;
+		width: 100%;
+		padding: 150px 30px 30px 30px;
+		border-radius: 10px;
+		position: relative;
+		top: -150px;
+	}
+	
+	.pay-box .label{
+		display: block;
+		color: #FFFFFF;
+		margin-bottom: 5px;
+		front-size: 12px;
+	} 
+	
+	.pay-box input{
+		margin: 0;
+		padding: 0;
+		font-weight: bold ;
+		display: block; 
+	}
+	
+	
+	.flexbox{
+		display: flex;
+		justify-content: space-between;
+	}
+	
+	.pay-box.expira{
+		width: 20%;
+	}

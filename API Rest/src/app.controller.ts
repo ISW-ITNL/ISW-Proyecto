@@ -12,4 +12,5 @@ export class AppController {
   getHello(@Res() res): any {
     return this.appService.getHello(res);
   }
+  
 }

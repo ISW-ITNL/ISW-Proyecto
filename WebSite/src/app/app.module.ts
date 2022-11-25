@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './component/clientes/login/login.component';
 import { SaldosComponent } from './component/clientes/saldos/saldos.component';
+import { PagosComponent } from './component/clientes/pagos/pagos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SaldosComponent
+    SaldosComponent,
+    PagosComponent
   ],
   imports: [
     FormsModule ,
