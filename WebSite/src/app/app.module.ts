@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './component/clientes/login/login.component';
 import { SaldosComponent } from './component/clientes/saldos/saldos.component';
+import { HistorialpagosComponent } from './component/clientes/historialpagos/historialpagos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SaldosComponent
+    SaldosComponent,
+    HistorialpagosComponent
   ],
   imports: [
     FormsModule ,
