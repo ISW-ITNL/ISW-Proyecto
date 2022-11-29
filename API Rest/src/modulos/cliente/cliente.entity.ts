@@ -1,4 +1,4 @@
-import {Entity, Column,PrimaryGeneratedColumn, OneToOne, JoinColumn, PrimaryColumn} from 'typeorm';
+import {Entity, Column,PrimaryGeneratedColumn, OneToOne, JoinColumn, PrimaryColumn, Double} from 'typeorm';
 
 @Entity({name:'clientes'})
 export class Clientes {
@@ -29,6 +29,7 @@ export class Clientes {
     @Column()
     codigo_postal: string;
 
+    @OneToOne(type => Paquetes, paquete => paquete.id)
     @Column()
     plan : number;
 
@@ -105,7 +106,7 @@ export class Pagos {
     fecha_pago: Date;
 
     @Column()
-    monto: number;
+    monto: Double;
 
     @OneToOne(type => MetodosPago, metodo_pago => metodo_pago.id)
     @JoinColumn()
@@ -128,5 +129,21 @@ export class Facturas {
     @OneToOne(type => Pagos, pago => pago.id)
     @Column()
     pagos: number;
+
+}
+
+@Entity({name:'Paquetes'})
+export class Paquetes {
+    @PrimaryGeneratedColumn()
+    id: number;
+
+    @Column()
+    nombre_paquete: string;
+
+    @Column()
+    canales: number;
+
+    @Column()
+    precio: Double;
 
 }
