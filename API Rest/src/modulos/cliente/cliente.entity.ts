@@ -105,8 +105,8 @@ export class Pagos {
     @Column({type: 'datetime', default: () => 'Current_timestamp()'})
     fecha_pago: Date;
 
-    @Column()
-    monto: Double;
+    @Column("decimal", { precision: 6, scale: 2 })
+    monto: number;
 
     @OneToOne(type => MetodosPago, metodo_pago => metodo_pago.id)
     @JoinColumn()
@@ -143,7 +143,7 @@ export class Paquetes {
     @Column()
     canales: number;
 
-    @Column()
-    precio: Double;
+    @Column("decimal", { precision: 6, scale: 2 })
+    precio: number;
 
 }
