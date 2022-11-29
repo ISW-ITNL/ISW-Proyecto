@@ -1,7 +1,4 @@
-import {Entity, Column,PrimaryGeneratedColumn, OneToOne, JoinColumn} from 'typeorm';
-
-
-
+import {Entity, Column,PrimaryGeneratedColumn, OneToOne, JoinColumn, PrimaryColumn} from 'typeorm';
 
 @Entity({name:'clientes'})
 export class Clientes {
@@ -75,7 +72,7 @@ export class MetodosPago {
     expiracion : string;
 
     @Column()
-    cvv : number;
+    cvv : string;
 
     @Column()
     ultimos_digitos : string;
@@ -85,9 +82,6 @@ export class MetodosPago {
     tipo_tarjeta: TipoTarjetas;
 
 }
-
-
-
 
 @Entity({name:'pagos'})
 export class Pagos {
@@ -119,3 +113,20 @@ export class Pagos {
 
 }
 
+@Entity({name:'Facturas'})
+export class Facturas {
+    @PrimaryGeneratedColumn()
+    id: number;
+
+    @OneToOne(type => Clientes, cliente => cliente.id)
+    @Column()
+    cliente: string;
+
+    @Column({type: 'datetime', default: () => 'Current_timestamp()'})
+    fecha_creacion: Date;
+
+    @OneToOne(type => Pagos, pago => pago.id)
+    @Column()
+    pagos: number;
+
+}
