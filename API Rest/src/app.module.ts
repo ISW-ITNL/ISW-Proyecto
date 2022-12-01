@@ -21,7 +21,7 @@ import { ClienteModule } from './modulos/cliente/cliente.module';
         password: configService.get<string>('CONTRASENIA_BDD'),
         database: configService.get<string>('BASE_DE_DATOS'),
         entities: [__dirname + '/modulos/**/*.entity{.ts,.js}'],
-        synchronize: true
+        synchronize: false
       }),
       inject: [ConfigService]
       

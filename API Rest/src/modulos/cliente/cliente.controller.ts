@@ -10,7 +10,7 @@ import { JwtAuthGuard } from '../jwt-auth.guard';
 export class ClienteController {
     constructor(private readonly appService: ClienteService) {}
 
-    @ApiParam({name:'email',required:true, type:String, description:'Email del usuario', example:'hola@gmail.com', allowEmptyValue:false})
+    @ApiParam({name:'email',required:true ,type:String, description:'Email del usuario', example:'hola@gmail.com', allowEmptyValue:false})
     @ApiParam({name:'password',required:true, type:String, description:'Contraseña del usuario', example:'12345678', allowEmptyValue:false})
     @ApiResponse({status:200, description:'Retorna el token de autenticación'})
     @ApiResponse({status:401, description:'No autorizado'})
@@ -27,5 +27,11 @@ export class ClienteController {
     @Get('ver')
     ver(){
         return this.appService.ver();
+    }
+
+    @ApiParam({name:'email',required:true, type:String, description:'Email del usuario', example:'hola@gmail.com', allowEmptyValue:false})
+    @Post('plan')
+    getPlan(@Body() lll:any){
+        return this.appService.obtenerInformacionPaquetes(lll);
     }
 }

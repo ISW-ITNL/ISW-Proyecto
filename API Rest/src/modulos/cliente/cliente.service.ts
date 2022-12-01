@@ -4,6 +4,7 @@ import { HttpException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { JwtService } from '@nestjs/jwt';
+import { generarPDF } from 'src/lib/pdf';
 var crypto = require('crypto');
 
 @Injectable()
@@ -12,7 +13,7 @@ export class ClienteService {
     private jwtService: JwtService) {}
 
     async login(cliente:LoginDTO){
-        const userFind = await this.clienteRepo.findOne({where:{email:cliente.email,password:crypto.createHash('sha256').update(cliente.password).digest('hex')}});
+        const userFind = await this.clienteRepo.findOne({where:{email:cliente.email,password:crypto.createHash('sha256').update(cliente.password).digest('hex')} });
         if(!userFind){
             throw new HttpException('Usuario o contraseña incorrectos', 401);
         }
@@ -26,6 +27,13 @@ export class ClienteService {
 
     ver(){
         return 'Hola';
+    }
+
+    async obtenerInformacionPaquetes(lll){
+        const datosPaquete= await this.clienteRepo.findOne({where:{email:lll.email},relations:['plan']})
+
+        console.log( await generarPDF(datosPaquete) );
+
     }
 
 }
