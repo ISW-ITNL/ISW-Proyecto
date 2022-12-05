@@ -47,8 +47,25 @@ Si quieres ver la documentación visita `localhost:3000/api/documentation`
 
 Primero crea una base de datos con el nombre db_isw luego ejecuta los sigueines querys
 
-> INSERT INTO `db_isw`.`tipo_tarjetas` (`nombre`) VALUES ('AMEX');
-> INSERT INTO `db_isw`.`tipo_tarjetas` (`nombre`) VALUES ('VISA');
-> INSERT INTO `db_isw`.`tipo_tarjetas` (`nombre`) VALUES ('MASTER CARD');
-> INSERT INTO `db_isw`.`clientes` (`nombre`, `apellido`, `email`, `telefono`, `direccion`, `ciudad`, `estado`, `codigo_postal`, `plan`, `promociones`, `portabilidad`, `password`) VALUES ('Alberto', 'Barrientos', 'hola@gmail.com', '78128293', 'ASDask', 'New York', 'Peru', '81923', '0', '0', '0', 'ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f');
+>insert into paquetes values (001, 'basico', 80, 200) ;
+
+>insert into paquetes values (002, 'avanzado', 140, 300); 
+
+>insert into paquetes values (003, 'plata', 200, 400) ;
+
+>insert into paquetes values (004, 'oro', 320, 500) ;
+
+>insert into paquetes values (005, 'diamante', 450, 650);
+
+>INSERT INTO db_isw.tipo_tarjetas (nombre) VALUES ('AMEX'); 
+
+>INSERT INTO db_isw.tipo_tarjetas (nombre) VALUES ('VISA');
+
+>INSERT INTO db_isw.tipo_tarjetas (nombre) VALUES ('MASTER CARD');
+
+
+>INSERT INTO db_isw.clientes (nombre, apellido, email, telefono, direccion, ciudad, estado, codigo_postal, planId, descuento, promociones, portabilidad, password) VALUES ('Alberto', 'Barrientos', 'hola@gmail.com', '78128293', 'ASDask', 'New York', 'Peru', '81923', '2', '10', '0', '0', 'ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f');
+
+>INSERT INTO db_isw.clientes (nombre, apellido, email, telefono, direccion, ciudad, estado, codigo_postal, planId, descuento, promociones, portabilidad, password) VALUES (‘Emilio’, 'Sanchez Enriquez', 'emilio@gmail.com', '19480713', 'Algo', 'Guadalupe', 'Nuevo Leon', '66112', '4', '0', '0', '0', 'ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f');
+
 

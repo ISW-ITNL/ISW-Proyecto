@@ -50,6 +50,9 @@ export class Clientes {
     plan : Paquetes;
 
     @Column()
+    descuento : number;
+
+    @Column()
     promociones : number;
 
     @Column()

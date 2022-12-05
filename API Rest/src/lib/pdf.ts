@@ -64,35 +64,56 @@ export async function generarPDF(datosUsuario){
 
     //Descripcion
     posX += 50;
-
     colocarTexto(pagina, datosUsuario.plan.nombre_paquete, posX, posY, 15, helveticaFont, rgb(0, 0, 0));
 
     //Precio Unitario
     posX += 303;
     const precio_plan = datosUsuario.plan.precio;
 
-    colocarTexto(pagina, '$' + precio_plan.toString() + ' MXN', posX, posY, 14, helveticaFont, rgb(0, 0, 0));
+    colocarTexto(pagina, '$' + precio_plan.toString() + ' MXN', posX, posY, 14, helveticaFont, rgb(0, 0, 0));    
 
     //Importe
     posX += 90;
 
     colocarTexto(pagina, '$' + precio_plan.toString() + ' MXN', posX, posY, 14, helveticaFont, rgb(0, 0, 0));
 
+    //Código
+    posX = 50;
+    posY -= 20;
+
+    colocarTexto(pagina, 'N/A', posX, posY, 15, helveticaFont, rgb(0, 0, 0));
+
+    //Descripción
+    posX += 50;
+    colocarTexto(pagina, 'Descuento', posX, posY, 15, helveticaFont, rgb(0, 0, 0));
+    
+    //Precio Unitario
+    posX += 303;
+    const porcentajeDescuento = datosUsuario.descuento;
+    colocarTexto(pagina, porcentajeDescuento + '%', posX, posY, 15, helveticaFont, rgb(0, 0, 0));
+
+    //Importe
+    posX += 90;
+
+    const descuento = ( Number( porcentajeDescuento / 100 ) * Number( precio_plan ) ); 
+
+    colocarTexto(pagina, '-$' + descuento.toString() + ' MXN', posX, posY, 14, helveticaFont, rgb(0, 0, 0));
+
     //Subtotal
     posX += 12;
     posY = 255;
-
-    colocarTexto(pagina, '$' + precio_plan.toString(), posX, posY, 12, helveticaFont, rgb(0, 0, 0));
+    const sub_total = Number( precio_plan ) - Number( descuento );
+    colocarTexto(pagina, '$' + sub_total.toString(), posX, posY, 12, helveticaFont, rgb(0, 0, 0));
 
     //IVA 16%
     posY -= 28;
-    const iva = (precio_plan * 0.16) ;
+    const iva = (sub_total * 0.16) ;
 
     colocarTexto(pagina, '$' + iva.toString(), posX, posY, 12, helveticaFont, rgb(0, 0, 0));
 
     //Total
     posY -= 22;
-    const total = Number( iva ) + Number( precio_plan );
+    const total = Number( iva ) + Number( sub_total );
 
     colocarTexto(pagina, '$' + total.toString(), posX, posY, 12, helveticaFont, rgb(0, 0, 0));
 
