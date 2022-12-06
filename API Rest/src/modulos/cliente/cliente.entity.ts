@@ -124,6 +124,9 @@ export class Pagos {
     @Column({type: 'datetime', default: () => 'Current_timestamp()'})
     fecha_pago: Date;
 
+    @Column()
+    fecha_corte: Date;
+
     @Column("decimal", { precision: 6, scale: 2 })
     monto: number;
 
