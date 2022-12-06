@@ -1,19 +1,46 @@
+<div class="l-form">
+  <div class="shape1"></div>
+  <div class="shape2"></div>
 
+  <div class="form">
+      <img src="assets/img/logo-sin-fondo-negro.png" alt="" class="form__img">
 
-    <div class="login-box">
-     <img class="avatar" src="assets/img/Llinmex-Logo.jpg" alt="Logo de Linmex"> 
-  
-      <form (ngSubmit)="login()">
-        <!-- USERNAME -->
-        <label name="Usuario" for="username"></label>
-        <input type="text" name="usuario" id="1" placeholder="User" autocomplete="off" required [(ngModel)]="email">
+      <form action="" class="form__content" (ngSubmit)="login()">
+          <h1 class="form__title">Bienvenido</h1>
 
-         <!-- Password -->
-        <label name="contrasenia" for="Password"></label>
-        <input type="password" name="contraseña" id="2" placeholder="contraseña" required [(ngModel)]="password">
+          <div class="form__div form__div-one">
+              <div class="form__icon">
+                  <i class='bx bx-user-circle'></i>
+              </div>
 
-        <input type="submit" value="Iniciar Sesion">
-        <a (click)="recuperarPassword()">¿Olvidaste tu contraseña?</a>
+              <div class="form__div-input">
+                  <label for="" class="form__label">Usuario/Correo:</label>
+                  <input type="text" name="usuario" class="form__input" [(ngModel)]="email" (focus)="focus($event)" autocomplete="off" (blur)="blur($event)">
+              </div>
+          </div>
 
+          <div class="form__div">
+              <div class="form__icon">
+                  <i class='bx bx-lock' ></i>
+              </div>
+
+              <div class="form__div-input">
+                  <label for="" class="form__label">Contraseña</label>
+                  <input type="password" name="password" class="form__input" [(ngModel)]="password" (focus)="focus($event)" autocomplete="off" (blur)="blur($event)">
+              </div>
+          </div>
+          <a class="form__forgot" (click)="recuperarPassword()">Olvidaste tu contraseña</a>
+
+          <input type="submit" class="form__button" value="Iniciar">
+
+          <div class="form__social">
+              <span class="form__social-text">O inicia session con</span>
+
+              <a href="#" class="form__social-icon"><i class='bx bxl-facebook' ></i></a>
+              <a href="#" class="form__social-icon"><i class='bx bxl-google' ></i></a>
+              <a href="#" class="form__social-icon"><i class='bx bxl-instagram' ></i></a>
+          </div>
       </form>
-    </div>
+  </div>
+
+</div>

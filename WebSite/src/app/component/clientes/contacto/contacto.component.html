@@ -1,0 +1,49 @@
+<div class="wrap">
+    <div class="header">
+        <h1>Tienes dudas? </h1>
+    </div>
+    <div class="main clearfix animated bounceInLeft">
+        <div class="profile clearfix">
+            <img src="assets/img/logo-sin-fondo.png" width="100" alt="photo">
+            <h2>Contactanos</h2>
+            <ul>
+                <li>(81) 80087671</li>
+                <li>linmx_sop@gmail.com</li>
+                <li> AV. MIGUEL ALEMAN NO.4425 LOC.11,12 Y 13, LINDA VISTA, 67130 GUADALUPE, N.L.</li>
+            </ul>
+        </div>
+        <div class="contract">
+            <h2>O nosotros nos comunicamos con usted </h2>
+            <form (submit)="enviar()">
+                <div>
+                    <label for="name">Nombre</label>
+                    <input type="text" name="name" id="name" placeholder="Petty" required autocomplete="off">
+                </div>
+                
+                <div>
+                    <label for="city">Cidudad</label>
+                    <input type="text" name="city" id="city" placeholder="Monterrey" required autocomplete="off">
+                </div>
+                
+                <div>
+                    <label for="phone">Celular</label>
+                    <input type="tel" name="phone" id="phone" pattern="[0-9]{10,14}" placeholder="0912345678" required autocomplete="off">
+                    <div class="errorMsg">Must be a valid Phone Number!</div>
+                </div>
+                
+                <div>
+                    <label for="email">Correo</label>
+                    <input type="email" name="email" id="email" required placeholder="example@example.com" autocomplete="off">
+                    <div class="errorMsg">Must be a valid Email Address!</div>
+                </div>
+                
+                <div class="full">
+                    <label for="message">Duda:</label>
+                    <textarea name="textarea" id="message" rows="5" cols="50"></textarea>
+                </div>
+                
+                <input type="submit" name="submit" value="Enviar">
+            </form>
+        </div>
+    </div>
+</div>

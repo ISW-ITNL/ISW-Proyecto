@@ -6,13 +6,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './component/clientes/login/login.component';
-import { SaldosComponent } from './component/clientes/saldos/saldos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    SaldosComponent
+    LoginComponent
   ],
   imports: [
     FormsModule ,
@@ -21,6 +19,6 @@ import { SaldosComponent } from './component/clientes/saldos/saldos.component';
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent,SaldosComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

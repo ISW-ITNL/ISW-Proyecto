@@ -1,0 +1,219 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+*,*:after,*:before{
+	box-sizing: border-box;
+}
+
+/* ========================================== */
+
+body{
+	font-family: 'Roboto', sans-serif;
+	background-color: #f1f0d1;
+}
+
+.wrap{
+	width: 900px;
+	margin: 0 auto;
+}
+
+.header{
+	text-align: center;
+	padding: 60px 0;
+
+	font-weight: bold;
+	font-size: 4em;
+	color: #f09c67;
+}
+
+.main{
+	margin: 0 auto;
+	height: 500px;
+  box-shadow : 5px 3px 5px #f0d78c;
+}
+
+.main .profile{
+	float: left;
+	width: 25%;
+	height: 100%;
+
+	padding: 25px;
+	background-color: #ffd98e;
+	color: #f09c67;
+
+	text-align: center;
+	line-height: 1.5;
+}
+
+.main .profile img{
+	border-radius: 50%;
+}
+
+.main .profile h2{
+	font-weight: bold;
+	font-size: 20px;
+
+	margin: 10px 0;
+}
+
+.main .profile ul{
+	text-align: left;
+}
+
+.main .contract{
+	float: left;
+	width: 75%;
+	height: 100%;
+	background-color: #fff;
+	color: #f09c67;
+
+	padding: 25px;
+	line-height: 1.5;
+}
+
+.main .contract h2{
+	font-weight: bold;
+	font-size: 20px;
+
+	margin-bottom: 20px;
+}
+
+.main .contract form > div{
+	display: inline-block;
+	width: 48.5%;
+	padding-bottom: 20px;
+
+}
+
+.main .contract form > div:nth-child(odd){
+	margin-right: 10px;
+}
+
+.main .contract form > div.full{
+	width: 100%;
+}
+
+.main .contract form label{
+    display: block;
+    font-size: 18px;
+  
+    cursor: pointer;
+}
+
+.main .contract form input,
+.main .contract form textarea{
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #facf5a;
+	border-radius: 3px;
+
+	color: #ab4f3a;
+	outline: 0;
+}
+
+.main .contract form textarea{
+  overflow: hidden;
+  border-left:5px solid  #facf5a;
+}
+
+.main .contract form input:required{
+  border-left:5px solid  #f8a978;
+}
+
+.main .contract form input:focus,
+.main .contract form textarea:focus{
+	background-color: #ffffee;
+	box-shadow: 0 0 0 1px #be6a15;
+}
+
+.main .contract form input[type="submit"]{
+	background-color: #f3cf7a;
+	font-size: 20px;
+
+	cursor: pointer;
+	border: 0;
+  
+  transition: 1s;
+}
+
+.main .contract form input[type="submit"]:hover{
+	opacity: 0.8;
+}
+
+.main .contract form .errorMsg{
+	font-style: italic;
+	color: red;
+	transition: 0.5s;
+	font-size: 0.8em;
+  opacity: 0;
+}
+
+.main .contract form input[type="text"]:valid,
+.main .contract form input[type="email"]:valid,
+.main .contract form input[type="tel"]:valid{
+	background: url(https://upload.cc/i1/2019/10/04/nFic51.png) no-repeat 268px center;
+	background-size: 20px;
+  
+  border-left:5px solid  #47e4bb;
+}
+
+/* 此寫法 ie 不支援 */
+.main .contract form input[type="text"]:invalid:not(:focus):not(:placeholder-shown),
+.main .contract form input[type="email"]:invalid:not(:focus):not(:placeholder-shown),
+.main .contract form input[type="tel"]:invalid:not(:focus):not(:placeholder-shown){
+	background: url(https://upload.cc/i1/2019/10/04/duWnVq.png) no-repeat 268px center;
+	background-size: 20px;
+  
+  border-left:5px solid  #ce2e6c;
+}
+
+.main .contract form input[type="email"]:invalid:not(:focus):not(:placeholder-shown) ~ .errorMsg,
+.main .contract form input[type="tel"]:invalid:not(:focus):not(:placeholder-shown) ~ .errorMsg{
+  opacity: 1;
+}
+
+.clearfix:after{
+	clear: both;
+	display: block;
+	content: '';
+}

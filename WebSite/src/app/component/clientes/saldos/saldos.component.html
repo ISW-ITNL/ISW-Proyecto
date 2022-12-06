@@ -1,39 +1,75 @@
-<div class="login-box">
-    <img class="avatar" src="assets/img/Llinmex-Logo.jpg" alt="Logo de Linmex"> 
-    <div class="texto-blanco-center"><h3>Próximo pago antes de DD-MM-AAAA</h3></div>
-    <div class="texto-blanco-center"><h2>$0000.00 MXN</h2></div>
+<div class='container main clearfix animated bounceInLeft'>
+  <div class='window'>
+    <div class='order-info'>
+      <div class='order-info-content'>
+        <h2>Lista de Servicios</h2>
+                <div class='line'></div>
+        <table class='order-table'>
+          <tbody>
+            <tr>
+              <td>
+              </td>
+              <td>
+                <br> <span class='thin'>Paquete: LIN100</span>
+                <br> NETLFLIX(2 PERFILES) VIX (2 PERFILES) TELEFONIA 100GB INTERNET<br> <span class='thin small'><br><br></span>
+              </td>
 
-    <div class="texto-blanco-center"><h5>Detalles</h5></div>
+            </tr>
+            <tr>
+              <td>
+                <div class='price'>$550.00 MXN</div>
+              </td>
+            </tr>
+          </tbody>
 
-    <div class=" col-12">
-        <table class="table table-striped table-bordered">
-            <thead>
-              <tr>
-                <th scope="col" class="texto-blanco">Asunto</th>
-                <th scope="col" class="texto-blanco">Monto</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row" class="texto-blanco">Pago 1</th>
-                <td class="texto-blanco">$$</td>
-              </tr>
-              <tr>
-                <th scope="row" class="texto-blanco">Pago 2</th>
-                <td class="texto-blanco">$$</td>
-              </tr>
-              <tr>
-                <th scope="row" class="texto-blanco">Descuento</th>
-                <td class="texto-blanco">-$$</td>
-              </tr>
-              <tr>
-                <th scope="row" class="texto-blanco">Total</th>
-                <td class="texto-blanco">$$</td>
-              </tr>
-            </tbody>
         </table>
-    </div>
-
-    <div class="text-center"><button type="button" class="btn btn-primary">Pagar</button></div>
-
+        <div class='line'></div>
+        <div class='total'>
+          <span style='float:left;'>
+            <div class='thin dense'>IVA 16%</div>
+            <div class='thin dense'>Descuento</div>
+            TOTAL
+          </span>
+          <span style='float:right; text-align:right;'>
+            <div class='thin dense'>$68.75</div>
+            <div class='thin dense'>$0</div>
+            $550.00 MXN
+          </span>
+        </div>
 </div>
+</div>
+        <div class='credit-info'>
+          <div class='credit-info-content'>
+            <table class='half-input-table'>
+              <tr><td>Por favor selecciona tu tarjeta: </td><td><div class='dropdown' id='card-dropdown'><div class='dropdown-btn' id='current-card'>Visa</div>
+                <div class='dropdown-select'>
+                <ul>
+                  <li>Master Card</li>
+                  <li>American Express</li>
+                  </ul></div>
+                </div>
+               </td></tr>
+            </table>
+            <img src='https://dl.dropboxusercontent.com/s/ubamyu6mzov5c80/visa_logo%20%281%29.png' height='80' class='credit-card-image' id='credit-card-image'/>
+            Numero de Tarjeta
+            <input class='input-field'/>
+            Nombre del Titular
+            <input class='input-field'/>
+            <table class='half-input-table'>
+              <tr>
+                <td> Fecha de Expiracion
+                  <input class='input-field' type="month"/>
+                </td>
+                <td>CVC
+                  <input class='input-field'/>
+                </td>
+              </tr>
+            </table>
+            <button class='pay-btn' (click)="pagar()">Pagar</button>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+    

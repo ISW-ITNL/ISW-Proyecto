@@ -8,7 +8,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
   @ApiOperation({ summary: 'Muestra la pagina Angular' })
   @ApiResponse({ status: 200, description: 'Angular' })
-  @Get()
+  @Get('*')
   getHello(@Res() res): any {
     return this.appService.getHello(res);
   }

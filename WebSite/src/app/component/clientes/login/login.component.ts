@@ -1,9 +1,8 @@
 import { environment } from './../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Component, ElementRef, OnInit, ViewEncapsulation } from '@angular/core';
 
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,7 +16,14 @@ export class LoginComponent implements OnInit {
   email:string = '';
   password:string = '';
 
-  constructor(private http : HttpClient, private router:Router) { }
+  constructor(private http : HttpClient, private router:Router,private el: ElementRef) { 
+    
+  }
+
+  addfocus(e: any) {
+    let parent = e.parentNode.parentNode
+    parent.classList.add("focus")
+  }
 
   recuperarPassword(){
       Swal.fire({
@@ -38,7 +44,7 @@ export class LoginComponent implements OnInit {
       password: this.password
     }).subscribe((data:any) => {
       localStorage.setItem('token', data._token);
-      this.router.navigate(['home']);
+      this.router.navigate(['cliente/saldo']);
     }
     , (error) => {
       if(error.status == 401){
@@ -61,6 +67,19 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
+  focus(e: any) {
+    var target = e.target
+    target.parentNode.parentNode.classList.add("focus")
+  }
+
+  blur(e: any) {
+    var target = e.target
+    if (target.value == "") {
+      target.parentNode.parentNode.classList.remove("focus")
+    }
+  }
+
 
 }
