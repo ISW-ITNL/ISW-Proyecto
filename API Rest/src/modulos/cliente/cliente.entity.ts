@@ -143,7 +143,7 @@ export class Facturas {
 
     @OneToOne(type => Clientes, cliente => cliente.id)
     @Column()
-    cliente: string;
+    cliente: number;
 
     @Column({type: 'datetime', default: () => 'Current_timestamp()'})
     fecha_creacion: Date;
