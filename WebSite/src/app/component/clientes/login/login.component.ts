@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
       password: this.password
     }).subscribe((data:any) => {
       localStorage.setItem('token', data._token);
-      this.router.navigate(['cliente/saldo']);
+      this.router.navigate(['cliente/']);
     }
     , (error) => {
       if(error.status == 401){
@@ -67,6 +67,10 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    var token = localStorage.getItem('token');
+    if(token){
+      this.router.navigate(['cliente/']);
+    }
 
   }
   focus(e: any) {

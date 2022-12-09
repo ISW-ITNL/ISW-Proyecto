@@ -1,1 +1,28 @@
-<p>historial-pagos works!</p>
+<div class="container2 main clearfix animated bounceInLeft">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Monto</th>
+                <th>Fecha</th>
+                <th>Estado</th>
+                <th>Factura</th>
+                    
+                
+            </tr>
+        </thead>
+        <tbody>
+    
+            <tr *ngFor="let pag of pagos">
+                <td>{{pag.id}}</td>
+                <td>${{pag.monto}}MXN</td>
+                <td>{{pag.fecha_pago}}</td>
+                <td>Pagado</td>
+                <td><a (click)="factura(pag.id)">Facturar</a></td>
+
+            </tr>
+            
+            
+        </tbody>
+    </table>
+    </div>

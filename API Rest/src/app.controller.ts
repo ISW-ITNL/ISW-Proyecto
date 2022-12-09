@@ -10,6 +10,6 @@ export class AppController {
   @ApiResponse({ status: 200, description: 'Angular' })
   @Get('*')
   getHello(@Res() res): any {
-    return this.appService.getHello(res);
+    
   }
 }

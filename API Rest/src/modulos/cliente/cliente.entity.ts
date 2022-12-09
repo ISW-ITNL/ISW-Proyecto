@@ -1,6 +1,23 @@
 import {Entity, Column,PrimaryGeneratedColumn, OneToOne, JoinColumn} from 'typeorm';
 
+@Entity({name:'Paquetes'})
+export class Paquetes {
+    @PrimaryGeneratedColumn()
+    id: number;
 
+    @Column()
+    nombre_paquete: string;
+
+    @Column()
+    detalles_paquete: string;
+
+    @Column()
+    canales: number;
+
+    @Column("decimal", { precision: 6, scale: 2 })
+    precio: number;
+
+}
 
 
 @Entity({name:'clientes'})
@@ -32,8 +49,12 @@ export class Clientes {
     @Column()
     codigo_postal: string;
 
+    @OneToOne(type => Paquetes, paquete => paquete.id)
+    @JoinColumn()
+    paquete: Paquetes;
+
     @Column()
-    plan : number;
+    descuento : number;
 
     @Column()
     promociones : number;
@@ -98,24 +119,11 @@ export class Pagos {
     @JoinColumn()
     cliente: Clientes;
 
-    @Column()
-    id_plan: number;
-
-    @Column()
-    id_promocion: number;
-
-    @Column()
-    portabilidad : boolean;
-
     @Column({type: 'datetime', default: () => 'Current_timestamp()'})
     fecha_pago: Date;
 
     @Column()
     monto: number;
-
-    @OneToOne(type => MetodosPago, metodo_pago => metodo_pago.id)
-    @JoinColumn()
-    metodo_pago: MetodosPago;
 
 }
 

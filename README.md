@@ -47,8 +47,13 @@ Si quieres ver la documentación visita `localhost:3000/api/documentation`
 
 Primero crea una base de datos con el nombre db_isw luego ejecuta los sigueines querys
 
-> INSERT INTO `db_isw`.`tipo_tarjetas` (`nombre`) VALUES ('AMEX');
-> INSERT INTO `db_isw`.`tipo_tarjetas` (`nombre`) VALUES ('VISA');
-> INSERT INTO `db_isw`.`tipo_tarjetas` (`nombre`) VALUES ('MASTER CARD');
-> INSERT INTO `db_isw`.`clientes` (`nombre`, `apellido`, `email`, `telefono`, `direccion`, `ciudad`, `estado`, `codigo_postal`, `plan`, `promociones`, `portabilidad`, `password`) VALUES ('Alberto', 'Barrientos', 'hola@gmail.com', '78128293', 'ASDask', 'New York', 'Peru', '81923', '0', '0', '0', 'ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f');
+> INSERT INTO db_isw.tipo_tarjetas (nombre) VALUES ('AMEX'); 
+> INSERT INTO db_isw.tipo_tarjetas (nombre) VALUES ('VISA'); 
+> INSERT INTO db_isw.tipo_tarjetas (nombre) VALUES ('MASTER CARD'); 
+> INSERT INTO db_isw.paquetes (nombre_paquete, detalles_paquete, canales, precio) VALUES ('LIN100', 'NETLFLIX(2 PERFILES) VIX (2 PERFILES) TELEFONIA 100GB INTERNET', '100', '550.00'); 
+> INSERT INTO db_isw.paquetes (nombre_paquete, detalles_paquete, canales, precio) VALUES ('LIN101', 'NETLFLIX(1 PERFILES) VIX (1 PERFILES) TELEFONIA 50GB INTERNET', '120', '400.00'); 
+> INSERT INTO db_isw.paquetes (nombre_paquete, detalles_paquete, canales, precio) VALUES ('LIN102', 'NETLFLIX(4 PERFILES) VIX (3 PERFILES) TELEFONIA 100GB INTERNET', '150', '600.00');
+> INSERT INTO db_isw.clientes (nombre, apellido, email, telefono, direccion, ciudad, estado, codigo_postal, paqueteId, promociones, portabilidad, descuento, password) VALUES ('Alberto', 'Barrientos', 'hola@gmail.com', '78128293', 'ASDask', 'New York', 'Peru', '81923', '1', '0', '0', 0, 'ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f'); 
+
+
 

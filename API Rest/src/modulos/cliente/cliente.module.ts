@@ -1,5 +1,5 @@
 import { JWTStrategy } from './../jwt.strategy';
-import { Clientes } from './cliente.entity';
+import { Clientes, Pagos } from './cliente.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Module } from '@nestjs/common';
 import { ClienteController } from './cliente.controller';
@@ -8,7 +8,7 @@ import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([Clientes ]),
+    TypeOrmModule.forFeature([Clientes,Pagos ]),
     JwtModule.register({
       secret : 'mYA8%c253JhI',
       signOptions: { expiresIn: '30m' },

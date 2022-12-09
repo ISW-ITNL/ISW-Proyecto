@@ -10,14 +10,14 @@
               <td>
               </td>
               <td>
-                <br> <span class='thin'>Paquete: LIN100</span>
-                <br> NETLFLIX(2 PERFILES) VIX (2 PERFILES) TELEFONIA 100GB INTERNET<br> <span class='thin small'><br><br></span>
+                <br> <span class='thin'>Paquete: {{paquetNme}}</span>
+                <br> {{paqueteDesc}}<br> <span class='thin small'><br><br></span>
               </td>
 
             </tr>
             <tr>
               <td>
-                <div class='price'>$550.00 MXN</div>
+                <div class='price'>${{monto}} MXN</div>
               </td>
             </tr>
           </tbody>
@@ -31,41 +31,32 @@
             TOTAL
           </span>
           <span style='float:right; text-align:right;'>
-            <div class='thin dense'>$68.75</div>
-            <div class='thin dense'>$0</div>
-            $550.00 MXN
+            <div class='thin dense'>${{iva}}</div>
+            <div class='thin dense'>${{discount}}</div>
+            ${{monto}} MXN
           </span>
         </div>
 </div>
 </div>
         <div class='credit-info'>
           <div class='credit-info-content'>
-            <table class='half-input-table'>
-              <tr><td>Por favor selecciona tu tarjeta: </td><td><div class='dropdown' id='card-dropdown'><div class='dropdown-btn' id='current-card'>Visa</div>
-                <div class='dropdown-select'>
-                <ul>
-                  <li>Master Card</li>
-                  <li>American Express</li>
-                  </ul></div>
-                </div>
-               </td></tr>
-            </table>
-            <img src='https://dl.dropboxusercontent.com/s/ubamyu6mzov5c80/visa_logo%20%281%29.png' height='80' class='credit-card-image' id='credit-card-image'/>
+            
+            <img [src]="imgSrc" height='80' class='credit-card-image' id='credit-card-image'/>
             Numero de Tarjeta
-            <input class='input-field'/>
+            <input class='input-field' [(ngModel)]="numeroTarjeta" (input)="chan()" [maxlength]="19"/>
             Nombre del Titular
-            <input class='input-field'/>
+            <input class='input-field' [(ngModel)]="nombre"/>
             <table class='half-input-table'>
               <tr>
                 <td> Fecha de Expiracion
-                  <input class='input-field' type="month"/>
+                  <input class='input-field' type="month" placeholder="mm/yyyy" [(ngModel)]="expiracion"/>
                 </td>
-                <td>CVC
-                  <input class='input-field'/>
+                <td>CVV
+                  <input class='input-field' [(ngModel)]="cvv" [maxlength]="4" [minlength]="3"/>
                 </td>
               </tr>
             </table>
-            <button class='pay-btn' (click)="pagar()">Pagar</button>
+            <button class='pay-btn' (click)="pagar()" [disabled]="pagarbool">Pagar</button>
 
           </div>
 

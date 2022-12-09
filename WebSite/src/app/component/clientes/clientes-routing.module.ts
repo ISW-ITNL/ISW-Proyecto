@@ -1,3 +1,4 @@
+import { HistorialPagosComponent } from './historial-pagos/historial-pagos.component';
 import { DetallesComponent } from './detalles/detalles.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { SaldosComponent } from './saldos/saldos.component';
@@ -10,6 +11,7 @@ const routes: Routes = [
     { path: 'saldos', component: SaldosComponent, data: { title: 'LINMEX Saldos' } },
     { path: 'contacto', component: ContactoComponent, data: { title: 'LINMEX Contacto' } },
     { path: 'detalles', component: DetallesComponent, data: { title: 'LINMEX Detalles' } },
+    { path: 'historial-pagos', component : HistorialPagosComponent, data: { title: 'LINMEX Historial de pagos' }},
 
     { path: '', redirectTo: 'saldos', pathMatch: 'full'}
   ] }

@@ -4,7 +4,4 @@ import { Res} from '@nestjs/common';
 
 @Injectable()
 export class AppService {
-  getHello(res) {
-    return res.sendFile('index.html');
-  }
 }

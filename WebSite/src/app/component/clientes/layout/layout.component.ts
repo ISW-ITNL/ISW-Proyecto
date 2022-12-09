@@ -14,4 +14,8 @@ export class LayoutComponent implements OnInit {
     
   }
 
+  salir(){
+    localStorage.removeItem('token');
+    window.location.href = '/login';
+  }
 }

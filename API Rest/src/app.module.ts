@@ -1,4 +1,7 @@
-import { Module } from '@nestjs/common';
+import { JwtModule } from '@nestjs/jwt';
+import { JWTMiddleware } from './middleware/jwt.middleware';
+import { LoggerMiddleware } from './middleware/logger.middleware';
+import { Module, MiddlewareConsumer, RequestMethod, NestModule  } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
@@ -26,12 +29,13 @@ import { ClienteModule } from './modulos/cliente/cliente.module';
       inject: [ConfigService]
       
     }),
-    ClienteModule
+    ClienteModule,
+    JwtModule
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {
+export class AppModule  {
 
   //Variables Globales
   static puerto_lisent: number;
@@ -41,5 +45,15 @@ export class AppModule {
     
     
   }
+  configure(consumer: MiddlewareConsumer) {
+    consumer
+      .apply(LoggerMiddleware)
+      .forRoutes('*');
+    consumer
+      .apply(JWTMiddleware)
+      .exclude({ path: 'api/cliente/login', method: RequestMethod.POST })
+      .forRoutes('*');
+  }
+
 
 }

@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { LayoutComponent } from './layout/layout.component';
 import { SaldosComponent } from './saldos/saldos.component';
 import { NgModule } from '@angular/core';
@@ -18,6 +19,7 @@ import { HistorialPagosComponent } from './historial-pagos/historial-pagos.compo
     HistorialPagosComponent
   ],
   imports: [
+    FormsModule,
     CommonModule,
     ClientesRoutingModule,
     
